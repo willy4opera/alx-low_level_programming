@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * main - The mains assigns random number to int n each run
+ * The main - The main fumction assigns a random number to int n each run
  * it executes, and prints it
  * Return: Always 0 (Success)
  */
@@ -11,7 +11,7 @@ int main(void)
 {
 	int n;
 
-        srand(time(0));
+	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	if (n > 0)
 		printf("%d is positive\n", n);
@@ -20,4 +20,4 @@ int main(void)
 	else if (n < 0)
 		printf("%d is negative\n", n);
 	return (0);
-}
+}i
