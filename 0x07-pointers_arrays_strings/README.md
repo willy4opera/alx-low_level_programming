@@ -353,4 +353,12 @@ Repo:
     Directory: 0x07-pointers_arrays_strings
     File: 8-print_diagsums.c
 
+For The Advanced task no. 9
 
+    open the file using vi -b file_ name 
+    when you see the vi window, don't use the insert mode, just type :set binary and hit enter
+    type :set noeol and hit enter
+    use the insert mode(i) and type abc123
+    esc :wq hit enter
+
+==> Then git add . etc
