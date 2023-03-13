@@ -3,8 +3,8 @@
 
 /**
  * *str_concat - concatenates two strings
- * @s1: string to concatenate
- * @s2: other string to concatenate
+ * @ssl1: string to concatenate
+ * @ssl2: other string to concatenate
  *
  * Return: pointer to the new string created (Success), or NULL (Error)
  */
