@@ -13,7 +13,7 @@ char *str_concat(char *ssl1, char *ssl2)
 	char *ssl3;
 	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
 
-	while (ssl1 && sssl1[len1])
+	while (ssl1 && ssl1[len1])
 		len1++;
 	while (ssl2 && ssl2[len2])
 		len2++;
