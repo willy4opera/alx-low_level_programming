@@ -9,7 +9,7 @@
  * @n: integer
  * @next: points to the next node
  *
- * Description: This is a list header file for singly linked list node structure
+ * Description: The list header file for singly linked list node structure
  * Part requirement for ALX software Engineering course
  */
 typedef struct listint_s
