@@ -11,13 +11,13 @@ void print_binary(unsigned long int n)
 	unsigned long int buf_m;
 	int Shift_Reg;
 
-	if (n == NULL)
+	if (n == 0)
 	{
 		printf("0");
 		return;
 	}
 
-	for (buf_m = n, Shift_Reg = 0; (buf_m >>= 1) > 0; shifts++)
+	for (buf_m = n, Shift_Reg = 0; (buf_m >>= 1) > 0; Shift_Reg++)
 		;
 
 	for (; Shift_Reg >= 0; Shift_Reg--)
