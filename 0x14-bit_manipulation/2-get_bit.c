@@ -3,10 +3,7 @@
 
 
 
-/*
-/*
- *
- * *
+/**
  * get_bit - The get_bit function,
  *	get the value of a bit at
  *	a given index
