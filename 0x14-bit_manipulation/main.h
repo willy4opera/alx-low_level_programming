@@ -1,6 +1,6 @@
-#ifndef MAIN.H
-#define MAIN.H
-/
+#ifndef _MAIN_
+#define _MAIN_
+/*
  *
  * Main: main header file.
  *
