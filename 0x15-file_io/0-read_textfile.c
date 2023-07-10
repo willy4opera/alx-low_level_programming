@@ -12,27 +12,27 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t oprt, read, wrt;
-	char *buffer;
+	ssize_t oprt, rd, wrt;
+	char *buf;
 
 	if (filename == 0)
 		return (0);
 
-	buffer = malloc(sizeof(char) * letters);
-	if (buffer == 0)
+	buf = malloc(sizeof(char) * letters);
+	if (buf == 0)
 		return (0);
 
 	oprt = open(filename, O_RDONLY);
-	read = read(oprt, buffer, letters);
-	wrt = write(STDOUT_FILENO, buffer, read);
+	rd = rd(oprt, buf, letters);
+	wrt = write(STDOUT_FILENO, buf, rd);
 
-	if (oprt == -1 || read == -1 || wrt == -1 || wrt != read)
+	if (oprt == -1 || rd == -1 || wrt == -1 || wrt != rd)
 	{
-		free(buffer);
+		free(buf);
 		return (0);
 	}
 
-	free(buffer);
+	free(buf);
 	close(op);
 
 	return (wrt);
