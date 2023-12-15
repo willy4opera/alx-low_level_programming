@@ -1,50 +1,51 @@
-#include "search_algos.h"
 #include <math.h>
+#include "search_algos.h"
 
 /**
- * jump_list - Function searches for a value in an array of
- * integers using the Jump search algorithm
+ * jump_list - search a single linked list using the jump search method
+ * @list: pointer to first node in linked list
+ * @size: size of the list (number of nodes)
+ * @value: value to be searched for
  *
- * @list: input list
- * @size: size of the array
- * @value: value to search in
- * Return: index of the number
+ * Return: pointer to first node containing value or NULL if not present
+ * or list is empty
  */
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	size_t indx, num, num1;
-	listint_t *prev;
+	listint_t *hold = list;
+	int i, jump;
 
 	if (list == NULL || size == 0)
 		return (NULL);
 
-	num1 = (size_t)sqrt((double)size);
-	indx = 0;
-	num = 0;
+	jump = sqrt(size);
 
-	do {
-		prev = list;
-		num++;
-		indx = num * num1;
-
-		while (list->next && list->indx < indx)
-			list = list->next;
-
-		if (list->next == NULL && indx != list->indx)
-			indx = list->indx;
-
-		printf("Value checked at index [%d] = [%d]\n", (int)indx, list->n);
-
-	} while (indx < size && list->next && list->n < value);
-
-	printf("Value found between indexes ");
-	printf("[%d] and [%d]\n", (int)prev->indx, (int)list->indx);
-
-	for (; prev && prev->indx <= list->indx; prev = prev->next)
+	while (hold->next != NULL)
 	{
-		printf("Value checked at index [%d] = [%d]\n", (int)prev->indx, prev->n);
-		if (prev->n == value)
-			return (prev);
+		list = hold;
+
+		for (i = 0; i < jump; i++)
+		{
+			hold = hold->next;
+			if (hold->next == NULL)
+				break;
+		}
+
+		printf("Value checked at index [%lu] = [%d]\n", hold->index, hold->n);
+
+		if (hold->n >= value)
+			break;
+	}
+
+	printf("Value found between indexes [%lu] and [%lu]\n", list->index,
+	       hold->index);
+
+	while (list != NULL && list != hold->next)
+	{
+		printf("Value checked at index [%lu] = [%d]\n", list->index, list->n);
+		if (list->n == value)
+			return (list);
+		list = list->next;
 	}
 
 	return (NULL);
